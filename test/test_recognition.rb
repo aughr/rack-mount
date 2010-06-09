@@ -343,6 +343,10 @@ class TestRecognition < Test::Unit::TestCase
     get '/ignorecase/Foo'
     assert_success
     assert_equal({ :controller => 'ignorecase' }, routing_args)
+
+    get '/ignorecase/josh/1'
+    assert_success
+    assert_equal({ :controller => 'ignorecase', :name => 'josh', :id => '1' }, routing_args)
   end
 
   def test_extended_path

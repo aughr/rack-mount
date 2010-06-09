@@ -35,7 +35,7 @@ module Rack::Mount
         while scanner.skip_until(/\(/)
           if scanner.scan(/\?:<([^>]+)>/)
             @names << scanner[1]
-          elsif scanner.scan(/\?:/)
+          elsif scanner.scan(/\?(i?m?x?\-?i?m?x?)?:/)
             # ignore noncapture
           else
             @names << nil
